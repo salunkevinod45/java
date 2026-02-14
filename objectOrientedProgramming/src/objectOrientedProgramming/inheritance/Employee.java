@@ -43,6 +43,6 @@ public class Employee extends Person {
 	@Override
 	public String toString() {
 		return String.format("name- %s,phone- %s,email- %s,title- %s, employer- %s, employeeGrade- %c, salary- %.2f",
-				getName(), getPhone(), getEmail(), title, getEmployer(), employeeGrade, salary);
+				super.getName(), super.getPhone(), super.getEmail(), title, getEmployer(), employeeGrade, salary);
 	}
 }
