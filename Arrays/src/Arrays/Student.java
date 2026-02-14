@@ -2,19 +2,23 @@ package Arrays;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.util.ArrayList;
+import java.util.Collections;
 
 public class Student {
 
 	private String name;
-	private int[] marks;
+	private ArrayList<Integer> marks = new ArrayList<Integer>();
 
-	public Student(String name, int[] marks) {
+	public Student(String name, int... marks) {
 		this.name = name;
-		this.marks = marks;
+		for (int mark : marks) {
+			this.marks.add(mark);
+		}
 	}
 
 	int getNumberOfMarks() {
-		return this.marks.length;
+		return this.marks.size();
 	}
 
 	int getTotalSumOfMarks() {
@@ -26,26 +30,11 @@ public class Student {
 	}
 
 	int getMaximumMark() {
-		int maxMark = marks[0];
-
-		for (int mark : marks) {
-			if (mark > maxMark) {
-				maxMark = mark;
-			}
-		}
-
-		return maxMark;
+		return Collections.max(marks);
 	}
 
 	int getMinimumMark() {
-		int minMark = marks[0];
-		for (int mark : marks) {
-			if (mark < minMark) {
-				minMark = mark;
-			}
-		}
-
-		return minMark;
+		return Collections.min(marks);
 	}
 
 	BigDecimal getAverageMarks() {
@@ -53,10 +42,23 @@ public class Student {
 
 		BigDecimal length = new BigDecimal(getNumberOfMarks());
 
-		BigDecimal avg = sum.divide(length, 2, RoundingMode.HALF_UP);
+		BigDecimal avg = sum.divide(length, 3, RoundingMode.HALF_UP);
 
 		return avg;
 
+	}
+
+	@Override
+	public String toString() {
+		return name + marks;
+	}
+
+	public void addValue(int value) {
+		marks.add(value);
+	}
+
+	public void removeValueAtIndex(int index) {
+		marks.remove(index);
 	}
 
 }
