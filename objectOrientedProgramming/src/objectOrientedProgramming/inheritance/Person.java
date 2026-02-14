@@ -4,7 +4,7 @@ public class Person {
 
 	private String name;
 	private String email;
-	private String location;
+	private String phone;
 
 	public String getName() {
 		return name;
@@ -22,12 +22,17 @@ public class Person {
 		this.email = email;
 	}
 
-	public String getLocation() {
-		return location;
+	public String getPhone() {
+		return phone;
 	}
 
-	public void setLocation(String location) {
-		this.location = location;
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+
+	@Override
+	public String toString() {
+		return String.format("name %s", name);
 	}
 
 }

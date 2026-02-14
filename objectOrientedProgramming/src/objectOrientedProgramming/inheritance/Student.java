@@ -4,6 +4,7 @@ public class Student extends Person {
 
 	private String collegeName;
 	private int rollNo;
+	private String className;
 
 	public String getCollegeName() {
 		return collegeName;
@@ -19,6 +20,14 @@ public class Student extends Person {
 
 	public void setRollNo(int rollNo) {
 		this.rollNo = rollNo;
+	}
+
+	public String getClassName() {
+		return className;
+	}
+
+	public void setClassName(String className) {
+		this.className = className;
 	}
 
 }

@@ -14,7 +14,7 @@ public class StudentRunner {
 		System.out.println(p1.toString());
 
 		System.out.println(stud.getCollegeName());
-		System.out.println(stud.getName());
+		System.out.println(stud);
 
 	}
 
